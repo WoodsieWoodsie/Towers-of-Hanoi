@@ -1,0 +1,39 @@
+
+.tower {
+  height: 40vh;
+  width: 30vw;
+  outline: 2px solid black;
+  display: inline-block;
+  margin: 5px;
+}
+
+.disk1 {
+  width: 10vw;
+  height: 10vh;
+  background-color: red;
+  margin: 0 auto;
+}
+
+.disk2 {
+  width: 20vw;
+  height: 10vh;
+  background-color: green;
+  margin: 0 auto;
+}
+
+.disk3 {
+  width: 30vw;
+  height: 10vh;
+  background-color: blue;
+  margin: 0 auto;
+}
+
+.containerBottom {
+  position: absolute;
+  width: 30vw;
+  display: inline-block;
+}
+
+.selected {
+  border: 2px solid black;
+}
