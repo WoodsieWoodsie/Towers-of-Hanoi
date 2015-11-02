@@ -9,8 +9,16 @@ function init() {
 
 let $selectedDisk = '';
 
+
+function win() {
+  $('.win').show();
+}
+
 function selectDisk() {
-  $selectedDisk = '';
+  let $anySelected = $('.disk').parent().parent().find('.selected')
+  if ($anySelected !== $selectedDisk) {
+    $anySelected.removeClass('selected');
+  }
   $selectedDisk = $(this).parent().children(':first');
   $($selectedDisk).toggleClass('selected');
 }
@@ -19,13 +27,14 @@ function moveDisk() {
   let $selectedTower = $(this);
   let $containerBottom = $selectedTower.find('.containerBottom');
   let $topDisk = $containerBottom.find('.disk:first-child');
-  console.log($topDisk);
   if ($selectedDisk.width() < $topDisk.width() || !$topDisk.width()) {
-    // $selectedDisk = $($selectedDisk).detach();
     $($containerBottom).prepend($selectedDisk);
     $selectedDisk.removeClass('selected');
-    $selectedDisk = '';
-    
+    $selectedDisk = '';    
+  }
+  let $towerThreeContents = $('.tower3').find('.containerBottom').children();
+  if ($towerThreeContents.length === 3) {
+    win();
   }
 
 }
